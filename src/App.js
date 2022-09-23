@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+// Essencials
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { HelmetProvider } from "react-helmet-async";
+
+// Hooks
+import { usePersistedState } from "./hooks/usePersistedState";
+
+// GlobalStyle - Themes
+import { GlobalStyles } from "./styles/Global";
+import LightTheme from "./styles/themes/lightTheme";
+import DarkTheme from "./styles/themes/darkTheme";
+
+// Pages Components
+import NavBar from "./components/NavBar/NavBar";
+import Portfolio from "./pages/Portfolio";
+import Sobre from "./pages/Sobre";
+import Error404 from "./pages/Error404";
+import Footer from "./components/Footer/Footer";
+
+// Variables Local
+const LIGHT = "light";
+const THEME = "theme";
 
 function App() {
+  // Get Themes
+  const [theme, setTheme] = usePersistedState(THEME, LightTheme);
+
+  // Functions Toggle Theme Light/Dark
+  const toggleTheme = () => {
+    setTheme(theme.title === LIGHT ? DarkTheme : LightTheme);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <HelmetProvider>
+        <GlobalStyles />
+        <BrowserRouter>
+          <NavBar toggleTheme={toggleTheme} />
+          <Routes>
+            <Route path="/" element={<Portfolio />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </HelmetProvider>
+    </ThemeProvider>
   );
 }
 
