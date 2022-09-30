@@ -1,26 +1,26 @@
 import React from "react";
 
 // Styles
-import { Container } from "./Items.styled";
+import { Wrapper } from "./Items.styled";
 
 // Components
-import Link from "../../../../Helper/Link/Link";
+import LinkComponent from "../../../../Helper/Link/Link";
 
 const Items = ({ data }) => {
   if (data === null) return null;
 
   return (
-    <Container>
+    <Wrapper>
       {data.map((item) => (
         <li key={item.id}>
           <h3>{item.name}</h3>
           <p>{item.description}</p>
           <div>
-            <Link href={item.html_url} target="_blank" text="Ir para..." />
+            <LinkComponent href={item.html_url} target="_blank" text="Ir para..." />
           </div>
         </li>
       ))}
-    </Container>
+    </Wrapper>
   );
 };
 

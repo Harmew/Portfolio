@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 //Styles
 import { Wrapper } from "./Link.styled";
 
-export const NavLinkComponent = ({ href, text, target }) => {
+export const LinkComponent = ({ href, text, target }) => {
   return (
     <Wrapper href={href} target={target}>
       {text}
@@ -12,9 +12,9 @@ export const NavLinkComponent = ({ href, text, target }) => {
   );
 };
 
-export default NavLinkComponent;
+export default LinkComponent;
 
-NavLinkComponent.propTypes = {
+LinkComponent.propTypes = {
   href: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   target: PropTypes.string,

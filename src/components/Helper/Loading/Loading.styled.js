@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   position: relative;
 
   & > svg {
-    color: ${({ theme }) => theme.colors.secundary};
+    color: ${({ theme }) => theme.colors.secondary};
 
     width: 80px;
     height: 80px;

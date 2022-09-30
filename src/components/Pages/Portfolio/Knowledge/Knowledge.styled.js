@@ -83,7 +83,7 @@ export const Container = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  border-right: 3px solid ${(props) => props.theme.colors.secundary};
+  border-right: 3px solid ${(props) => props.theme.colors.secondary};
 
   width: 50%;
   padding: 0 4em;
@@ -147,7 +147,7 @@ export const IconsContainer = styled.div`
   }
 
   & > svg {
-    background-color: ${(props) => props.theme.colors.secundary};
+    background-color: ${(props) => props.theme.colors.secondary};
     color: ${(props) => props.theme.colors.primary};
 
     width: 120px;
@@ -155,11 +155,14 @@ export const IconsContainer = styled.div`
     padding: 1em;
 
     cursor: pointer;
+
     transition: all 0.2s ease;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       box-shadow: inset 0px 0px 0px 3px
-          ${(props) => props.theme.colors.secundary},
+          ${(props) => props.theme.colors.secondary},
         inset 0px 0px 0px 6px ${(props) => props.theme.colors.primary};
     }
 

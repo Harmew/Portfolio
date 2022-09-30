@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
-  border-bottom: 3px solid ${({ theme }) => theme.colors.secundary};
+  background-color: ${(props) => props.theme.colors.primary};
+  border-bottom: 3px solid ${(props) => props.theme.colors.secondary};
 
-  height: calc(100vh + 2px);
+  height: calc(100vh + 3px);
   width: 100%;
 
   display: flex;
@@ -11,16 +12,16 @@ export const Wrapper = styled.section`
   align-items: center;
 
   & > :nth-child(1) {
-    height: calc(100vh + 2px);
+    height: calc(100vh + 3px);
     width: calc(100vw + 60px);
 
     position: absolute;
     top: 0;
     left: -70px;
 
-    z-index: -1;
+    z-index: 0;
 
-    transition: background-color 0.5s ease;
+    transition: color 0.5s ease;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -28,8 +29,6 @@ export const Wrapper = styled.section`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
-    background-color: ${(props) => props.theme.colors.primary};
 
     & > g {
       scale: 0.3;
@@ -45,9 +44,9 @@ export const Wrapper = styled.section`
   & > svg[class*="1"],
   & > svg[class*="2"],
   & > svg[class*="3"] {
-    background-color: ${({ theme }) => theme.colors.primary};
-    border: 3px solid ${({ theme }) => theme.colors.secundary};
-    color: ${({ theme }) => theme.colors.secundary};
+    background-color: ${(props) => props.theme.colors.primary};
+    border: 3px solid ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.secondary};
 
     max-width: 250px;
     max-height: 250px;
@@ -128,7 +127,6 @@ export const Wrapper = styled.section`
     35% {
       transform: translate(-12vw, -12vh);
     }
-
     90% {
       transform: translate(0, 0);
     }
@@ -166,7 +164,6 @@ export const Wrapper = styled.section`
     50% {
       transform: translateY(-30vh);
     }
-
     90% {
       transform: translateY(0);
     }

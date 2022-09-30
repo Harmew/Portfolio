@@ -6,7 +6,7 @@ const useFetch = () => {
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
-  // Fetch Data Function 
+  // Fetch Data Function
   const request = React.useCallback(async (url, options) => {
     let response;
     let json;

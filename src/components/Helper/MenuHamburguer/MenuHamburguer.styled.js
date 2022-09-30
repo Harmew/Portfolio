@@ -18,7 +18,7 @@ export const Wrapper = styled.button`
   }
 
   & > * {
-    background: ${(props) => props.theme.colors.secundary};
+    background: ${(props) => props.theme.colors.secondary};
 
     height: 3px;
     width: 100%;

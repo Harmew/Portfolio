@@ -1,14 +1,14 @@
 import React from "react";
 
 // Styles
-import { Container } from "./SobrePage.styled";
+import { Wrapper } from "./SobrePage.styled";
 
 const SobrePage = () => {
   return (
-    <Container>
+    <Wrapper>
       <h1>Sobre</h1>
       <p>Em produção..</p>
-    </Container>
+    </Wrapper>
   );
 };
 

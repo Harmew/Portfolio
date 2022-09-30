@@ -3,12 +3,8 @@ import React from "react";
 // Styles
 import { Wrapper } from "./Home.styled";
 
-// Image - Background
+// SVGs
 import { ReactComponent as BackgroundImage } from "../../../../assets/svgs/Background-Home.svg";
-//
-//
-
-// SVG
 import { ReactComponent as Cat } from "../../../../assets/svgs/Cat.svg";
 
 // Cats

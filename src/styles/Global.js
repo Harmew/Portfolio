@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background: ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.secundary};
+    color: ${(props) => props.theme.colors.secondary};
 
     font: 400 16px Roboto, sans-serif;
   }
@@ -32,7 +32,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme.colors.secundary};
+    background: ${(props) => props.theme.colors.secondary};
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -41,11 +41,11 @@ export const GlobalStyles = createGlobalStyle`
 
   ::-moz-selection {
   color: ${(props) => props.theme.colors.primary};
-  background: ${(props) => props.theme.colors.secundary};
+  background: ${(props) => props.theme.colors.secondary};
   }
 
   ::selection {
   color: ${(props) => props.theme.colors.primary};
-  background: ${(props) => props.theme.colors.secundary};
+  background: ${(props) => props.theme.colors.secondary};
   }
 `;

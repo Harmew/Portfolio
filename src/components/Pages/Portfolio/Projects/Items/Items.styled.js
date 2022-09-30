@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.ul`
+export const Wrapper = styled.ul`
   width: 100%;
   margin: 2em 0;
   padding: 0 6em 0.5em 6em;
@@ -9,11 +9,11 @@ export const Container = styled.ul`
   justify-content: space-evenly;
   flex-wrap: wrap;
 
-  gap: 1.75em;
+  gap: 3em;
 
   & > li {
-    border: 2px solid ${(props) => props.theme.colors.secundary};
-    box-shadow: 5px 5px 0px ${(props) => props.theme.colors.secundary};
+    border: 3px solid ${(props) => props.theme.colors.secondary};
+    box-shadow: 6px 6px 0px ${(props) => props.theme.colors.secondary};
 
     height: 12em;
     width: 15em;

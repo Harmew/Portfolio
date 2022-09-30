@@ -1,9 +1,7 @@
 import React from "react";
 
-// Head Component
+// Componets
 import Head from "../components/Helper/Head";
-
-// Page Componets
 import Home from "../components/Pages/Portfolio/Home/Home";
 import Projects from "../components/Pages/Portfolio/Projects/Projects";
 import Knowledge from "../components/Pages/Portfolio/Knowledge/Knowledge";

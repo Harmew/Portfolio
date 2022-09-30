@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.nav`
   background: ${(props) => props.theme.colors.navBar};
-  color: ${(props) => props.theme.colors.secundary};
+  color: ${(props) => props.theme.colors.secondary};
 
   height: 4rem;
   width: 100%;

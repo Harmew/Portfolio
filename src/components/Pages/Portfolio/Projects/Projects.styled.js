@@ -1,11 +1,18 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
-  border-bottom: 3px solid ${(props) => props.theme.colors.secundary};
-
+  border-bottom: 3px solid ${(props) => props.theme.colors.secondary};
   min-height: calc(100vh + 7em);
   width: 100%;
+
   padding-bottom: 3em;
+`;
+
+export const Container = styled.div`
+  width: 80%;
+  height: 100%;
+
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
@@ -23,5 +30,9 @@ export const Wrapper = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
   }
 `;

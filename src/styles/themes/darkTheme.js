@@ -2,7 +2,7 @@ const theme = {
   title: "dark",
   colors: {
     primary: "#000000",
-    secundary: "#ffffff",
+    secondary: "#ffffff",
     text: "#ffffff",
     neutral: "#D9D9D9",
     transparenceBar: "rgba(0, 0, 0,0.5)",
