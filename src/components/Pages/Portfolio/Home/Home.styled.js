@@ -1,89 +1,121 @@
 import styled from "styled-components";
 
-export const BackGround = styled.img`
-  width: 100%;
-  height: calc(100vh + 2px);
-  transition: 0.5s ease;
-  object-fit: cover;
-  z-index: -1;
-  position: absolute;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  &.light {
-    filter: invert(1);
-  }
-`;
-
 export const Wrapper = styled.section`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.secundary};
-  width: 100%;
+  border-bottom: 3px solid ${({ theme }) => theme.colors.secundary};
+
   height: calc(100vh + 2px);
+  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  & > svg {
+  & > :nth-child(1) {
+    height: calc(100vh + 2px);
+    width: calc(100vw + 60px);
+
+    position: absolute;
+    top: 0;
+    left: -70px;
+
+    z-index: -1;
+
+    transition: background-color 0.5s ease;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    background-color: ${(props) => props.theme.colors.primary};
+
+    & > g {
+      scale: 0.3;
+    }
+  }
+
+  & > svg[class*="1"],
+  & > svg[class*="2"],
+  & > svg[class*="3"] {
+    background-color: ${({ theme }) => theme.colors.primary};
+    border: 3px solid ${({ theme }) => theme.colors.secundary};
+    color: ${({ theme }) => theme.colors.secundary};
+
     max-width: 250px;
     max-height: 250px;
-    background-color: red;
-    position: absolute;
     margin: 0 10%;
+
+    position: absolute;
+
     transition: all 0.5s ease-in-out;
-    background-color: ${({ theme }) => theme.colors.primary};
-    border: 6px solid ${({ theme }) => theme.colors.secundary};
   }
 
-  & > svg[class="1 light"] {
+  & > svg[class*="1"] {
     bottom: 100px;
     right: 0;
     z-index: 1;
     animation: MoveFowardsOne 20s ease infinite;
   }
 
-  & > svg[class="1 dark"] {
-    bottom: 100px;
-    right: 0;
-    z-index: 1;
-    animation: MoveFowardsOne 20s ease infinite;
-  }
-
-  & > svg[class="2 light"] {
+  & > svg[class*="2"] {
     bottom: 120px;
     right: 20px;
     z-index: 2;
     animation: MoveFowardsTwo 20s ease infinite;
   }
 
-  & > svg[class="2 dark"] {
-    bottom: 120px;
-    right: 20px;
-    z-index: 2;
-    animation: MoveFowardsTwo 20s ease infinite;
-  }
-
-  & > svg[class="3 light"] {
+  & > svg[class*="3"] {
     bottom: 140px;
     right: 40px;
     z-index: 3;
     animation: MoveFowardsThree 20s ease infinite;
   }
 
-  & > svg[class="3 dark"] {
-    bottom: 140px;
-    right: 40px;
-    z-index: 3;
-    animation: MoveFowardsThree 20s ease infinite;
+  // Media Queries
+  @media (max-width: 768px) {
+    & > svg[class*="1"],
+    & > svg[class*="2"],
+    & > svg[class*="3"] {
+      max-width: 200px;
+      max-height: 200px;
+      margin: 0 10%;
+    }
+  }
+
+  @media (max-width: 410px) {
+    & > svg[class*="1"],
+    & > svg[class*="2"],
+    & > svg[class*="3"] {
+      max-width: 200px;
+      max-height: 200px;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      text-align: center;
+
+      position: absolute;
+      left: 0;
+      right: 0 !important;
+    }
+
+    & > svg[class*="1"] {
+      animation: MoveFowardsOneMobile 20s ease infinite;
+    }
+
+    & > svg[class*="2"] {
+      animation: MoveFowardsTwoMobile 20s ease infinite;
+    }
+
+    & > svg[class*="3"] {
+      animation: MoveFowardsThreeMobile 20s ease infinite;
+    }
   }
 
   // KeyFrames
   @keyframes MoveFowardsOne {
-    0% {
-    }
     35% {
       transform: translate(-12vw, -12vh);
     }
@@ -97,8 +129,6 @@ export const Wrapper = styled.section`
   }
 
   @keyframes MoveFowardsTwo {
-    0% {
-    }
     35% {
       transform: translate(-15vw, -15vh);
     }
@@ -111,8 +141,6 @@ export const Wrapper = styled.section`
   }
 
   @keyframes MoveFowardsThree {
-    0% {
-    }
     35% {
       transform: translate(-18vw, -18vh);
     }
@@ -126,8 +154,6 @@ export const Wrapper = styled.section`
 
   // Mobile Version Keyframes
   @keyframes MoveFowardsOneMobile {
-    0% {
-    }
     50% {
       transform: translateY(-30vh);
     }
@@ -141,8 +167,6 @@ export const Wrapper = styled.section`
   }
 
   @keyframes MoveFowardsTwoMobile {
-    0% {
-    }
     40% {
       transform: translateY(-30vh);
     }
@@ -155,8 +179,6 @@ export const Wrapper = styled.section`
   }
 
   @keyframes MoveFowardsThreeMobile {
-    0% {
-    }
     30% {
       transform: translateY(-30vh);
     }
@@ -165,58 +187,6 @@ export const Wrapper = styled.section`
     }
     90% {
       transform: translateY(0);
-    }
-  }
-
-  // Media Queries
-  @media (max-width: 768px) {
-    & > svg {
-      max-width: 200px;
-      max-height: 200px;
-      margin: 0 10%;
-    }
-  }
-
-  @media (max-width: 410px) {
-    & > svg {
-      max-width: 200px;
-      max-height: 200px;
-      position: absolute;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-      text-align: center;
-    }
-
-    & > svg[class="1 light"] {
-      animation: MoveFowardsOneMobile 20s ease infinite;
-      right: 0;
-    }
-
-    & > svg[class="1 dark"] {
-      animation: MoveFowardsOneMobile 20s ease infinite;
-      right: 0;
-    }
-
-    & > svg[class="2 light"] {
-      animation: MoveFowardsTwoMobile 20s ease infinite;
-      right: 0;
-    }
-
-    & > svg[class="2 dark"] {
-      animation: MoveFowardsTwoMobile 20s ease infinite;
-      right: 0;
-    }
-
-    & > svg[class="3 light"] {
-      animation: MoveFowardsThreeMobile 20s ease infinite;
-      right: 0;
-    }
-
-    & > svg[class="3 dark"] {
-      animation: MoveFowardsThreeMobile 20s ease infinite;
-      right: 0;
     }
   }
 `;

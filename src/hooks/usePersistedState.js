@@ -5,7 +5,7 @@ export const usePersistedState = (key, initialState) => {
   const [state, setState] = useState(() => {
     const storageValue = localStorage.getItem(key);
 
-  // Case LocalStorage Value exist return value else return initialState
+    // Case LocalStorage Value exists return value else return initialState = light
     if (storageValue) {
       return JSON.parse(storageValue);
     } else {

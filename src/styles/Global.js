@@ -1,7 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-   * {
+
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,7 +11,16 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: ${(props) => props.theme.colors.primary};
     color: ${(props) => props.theme.colors.secundary};
+
     font: 400 16px Roboto, sans-serif;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   ::-webkit-scrollbar {
@@ -29,7 +39,13 @@ export const GlobalStyles = createGlobalStyle`
     background: ${(props) => props.theme.colors.transparenceBarHover};
   }
 
-  ul {
-    list-style: none;
+  ::-moz-selection {
+  color: ${(props) => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors.secundary};
+  }
+
+  ::selection {
+  color: ${(props) => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors.secundary};
   }
 `;

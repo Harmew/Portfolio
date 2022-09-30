@@ -1,16 +1,20 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.footer`
-  background-color: transparent;
-  height: 10vh;
+  border-top: 3px solid ${(props) => props.theme.colors.neutral};
+
+  height: 15vh;
   width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid ${(props) => props.theme.colors.neutral};
+
+  background-color: transparent;
 
   & > p {
     color: ${(props) => props.theme.colors.text};
+
     font-size: 1em;
   }
 `;

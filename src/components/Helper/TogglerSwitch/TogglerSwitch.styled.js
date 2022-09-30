@@ -1,33 +1,47 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.label`
+  background: ${(props) => props.theme.colors.neutral};
+
+  height: 1.5rem;
   width: 3rem;
   min-width: 3rem;
-  height: 1.5rem;
-  background: ${(props) => props.theme.colors.neutral};
+
   display: flex;
-  border-radius: 1.5rem;
   align-items: center;
+
   position: relative;
+
+  border-radius: 1.5rem;
+
+  cursor: pointer;
 
   input {
     height: 100%;
     width: 100%;
+
     opacity: 0;
+
+    cursor: pointer;
   }
 
   span {
-    position: absolute;
-    width: 1.4rem;
-    height: 1.4rem;
-    left: 1px;
-    border-radius: 50%;
     background: ${(props) => props.theme.colors.primary};
-    transition: 0.3s ease-in-out;
+
+    height: 1.4rem;
+    width: 1.4rem;
+
+    position: absolute;
+    left: 1px;
+
+    border-radius: 50%;
+
+    transition: 0.5s ease-in-out;
   }
 
   input:checked + span {
     left: calc(100% - 1px);
+
     transform: translateX(-100%);
   }
 `;

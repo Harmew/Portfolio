@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // Styles
 import { Wrapper } from "./Erro.styled";
@@ -9,3 +10,7 @@ const Erro = ({ erro }) => {
 };
 
 export default Erro;
+
+Erro.prototype = {
+  erro: PropTypes.string.isRequired,
+};

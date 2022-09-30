@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.section`
+export const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+
   display: flex;
-
-  align-items: center;
   justify-content: center;
-
-  min-height: 100vh;
-  text-align: center;
+  align-items: center;
+  flex-direction: column;
 `;

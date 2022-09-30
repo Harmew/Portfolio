@@ -1,32 +1,36 @@
-import React, { useContext } from "react";
+import React from "react";
 
 // Styles
-import { ThemeContext } from "styled-components";
-import { Wrapper, BackGround } from "./Home.styled";
+import { Wrapper } from "./Home.styled";
 
 // Image - Background
-import BackgroundImage from "../../../../assets/images/BackGround-Home.jpg";
+import { ReactComponent as BackgroundImage } from "../../../../assets/svgs/Background-Home.svg";
+//
+//
 
-// Svg - Cat
+// SVG
 import { ReactComponent as Cat } from "../../../../assets/svgs/Cat.svg";
 
+// Cats
+const CATS_LIST = [
+  {
+    id: 1,
+  },
+  {
+    id: 2,
+  },
+  {
+    id: 3,
+  },
+];
+
 const Home = () => {
-  const { title } = useContext(ThemeContext);
   return (
     <Wrapper>
-      <BackGround src={BackgroundImage} className={title} alt="backgroud" />
-      <Cat
-        fill={title === "light" ? "#000000" : "#ffffff"}
-        className={`1 ${title}`}
-      />
-      <Cat
-        fill={title === "light" ? "#000000" : "#ffffff"}
-        className={`2 ${title}`}
-      />
-      <Cat
-        fill={title === "light" ? "#000000" : "#ffffff"}
-        className={`3 ${title}`}
-      />
+      <BackgroundImage />
+      {CATS_LIST.map((cat) => (
+        <Cat key={cat.id} className={cat.id} />
+      ))}
     </Wrapper>
   );
 };

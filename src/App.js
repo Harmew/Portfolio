@@ -21,19 +21,20 @@ import Footer from "./components/Footer/Footer";
 
 // Variables Local
 const LIGHT = "light";
+const DARK = "dark";
 const THEME = "theme";
 
 function App() {
   // Get Themes
-  const [theme, setTheme] = usePersistedState(THEME, LightTheme);
+  const [theme, setTheme] = usePersistedState(THEME, LIGHT);
 
   // Functions Toggle Theme Light/Dark
   const toggleTheme = () => {
-    setTheme(theme.title === LIGHT ? DarkTheme : LightTheme);
+    setTheme(theme === LIGHT ? DARK : LIGHT);
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === LIGHT ? DarkTheme : LightTheme}>
       <HelmetProvider>
         <GlobalStyles />
         <BrowserRouter>

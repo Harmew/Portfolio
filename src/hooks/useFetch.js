@@ -1,10 +1,12 @@
 import React from "react";
 
 const useFetch = () => {
+  // Set State
   const [data, setData] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
+  // Fetch Data Function 
   const request = React.useCallback(async (url, options) => {
     let response;
     let json;

@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.button`
-  cursor: pointer;
-  position: relative;
-  display: block;
   height: 22px;
   width: 30px;
+
+  display: block;
+  position: relative;
+
   background-color: transparent;
   border: none;
+
+  cursor: pointer;
   outline: none;
 
   @media (min-width: 450px) {
@@ -15,27 +18,30 @@ export const Wrapper = styled.button`
   }
 
   & > * {
-    position: absolute;
-    display: block;
+    background: ${(props) => props.theme.colors.secundary};
+
     height: 3px;
     width: 100%;
-    background: ${(props) => props.theme.colors.secundary};
+
+    display: block;
+    position: absolute;
+
+    transition: 0.25s ease-in-out;
   }
 `;
 
 export const FirstColumn = styled.span`
   top: 0px;
-  transition: 0.25s ease-in-out;
 
   &.active {
-    transform: rotate(-45deg);
     top: 8px;
+
+    transform: rotate(-45deg);
   }
 `;
 
 export const SecondColumn = styled.span`
   top: 8px;
-  transition: 0.25s ease-in-out;
 
   &.active {
     opacity: 0;
@@ -44,7 +50,6 @@ export const SecondColumn = styled.span`
 
 export const ThirdColumn = styled.span`
   top: 16px;
-  transition: 0.25s ease-in-out;
 
   &.active {
     transform: rotate(45deg);

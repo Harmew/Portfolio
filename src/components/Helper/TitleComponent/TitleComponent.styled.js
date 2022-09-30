@@ -19,11 +19,13 @@ export const Wrapper = styled.h1`
 
   &.hover::after {
     background: none repeat scroll 0 0 ${(props) => props.theme.colors.text};
+
+    height: 2px;
+    width: 100%;
+
     content: "";
     display: block;
-    height: 2px;
-    width: 0;
+
     transition: all ease-in-out 0.3s;
-    width: 100%;
   }
 `;

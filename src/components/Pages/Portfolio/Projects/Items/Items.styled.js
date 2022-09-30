@@ -1,26 +1,29 @@
 import styled from "styled-components";
 
 export const Container = styled.ul`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  list-style: none;
   width: 100%;
-  padding: 0 6em 0.5em 6em;
-  gap: 1.75em;
   margin: 2em 0;
+  padding: 0 6em 0.5em 6em;
+
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  gap: 1.75em;
 
   & > li {
-    height: 12em;
-    width: 15em;
     border: 2px solid ${(props) => props.theme.colors.secundary};
     box-shadow: 5px 5px 0px ${(props) => props.theme.colors.secundary};
-    transition: 0.4s ease-in-out;
+
+    height: 12em;
+    width: 15em;
     padding: 0.5em;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    transition: 0.4s ease-in-out;
   }
 
   & > li:hover {

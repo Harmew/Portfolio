@@ -1,16 +1,23 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.a`
-  text-decoration: none;
-  font-size: 1em;
   color: ${(props) => props.theme.colors.text};
+
+  font-size: 1em;
+
+  position: relative;
 
   &::after {
     background: none repeat scroll 0 0 ${(props) => props.theme.colors.text};
-    content: "";
-    display: block;
+
     height: 2px;
     width: 0;
+
+    content: "";
+    display: block;
+
+    position: absolute;
+
     transition: all ease-in-out 0.3s;
   }
 

@@ -1,13 +1,23 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  margin: 0 auto;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 20px;
+  position: relative;
 
-  color: ${({ theme }) => theme.colors.secundary};
+  & > svg {
+    color: ${({ theme }) => theme.colors.secundary};
+
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto;
+    padding-left: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    top: -60px;
+    left: 0%;
+  }
 `;

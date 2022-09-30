@@ -1,10 +1,15 @@
 import React from "react";
 
 // Styles
-import { Wrapper } from "./SobrePage.styled";
+import { Container } from "./SobrePage.styled";
 
 const SobrePage = () => {
-  return <Wrapper>Sobre</Wrapper>;
+  return (
+    <Container>
+      <h1>Sobre</h1>
+      <p>Em produção..</p>
+    </Container>
+  );
 };
 
 export default SobrePage;
