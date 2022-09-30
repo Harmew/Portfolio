@@ -32,7 +32,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme.colors.transparenceBar};
+    background: ${(props) => props.theme.colors.secundary};
   }
 
   ::-webkit-scrollbar-thumb:hover {
