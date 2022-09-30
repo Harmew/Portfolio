@@ -13,7 +13,7 @@ export const Wrapper = styled.section`
 
   & > :nth-child(1) {
     height: calc(100vh + 3px);
-    width: calc(100vw + 70px);
+    width: calc(100vw + 60px);
 
     position: absolute;
     top: 0;
