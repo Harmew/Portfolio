@@ -34,7 +34,7 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme === LIGHT ? DarkTheme : LightTheme}>
+    <ThemeProvider theme={theme === LIGHT ? LightTheme : DarkTheme}>
       <HelmetProvider>
         <GlobalStyles />
         <BrowserRouter>
