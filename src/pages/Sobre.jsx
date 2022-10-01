@@ -2,7 +2,9 @@ import React from "react";
 
 // Components
 import Head from "../components/Helper/Head";
-import SobrePage from "../components/Pages/SobrePage/SobrePage";
+import AboutMe from "../components/Pages/SobrePage/AboutMe/AboutMe";
+import School from "../components/Pages/SobrePage/School/School";
+import AboutSite from "../components/Pages/SobrePage/AboutSite/AboutSite";
 
 // Variables Text-Helmet
 const title = "Sobre - Harmew";
@@ -14,7 +16,9 @@ export const Sobre = () => {
   return (
     <main>
       <Head title={title} description={description} keywords={keywords} />
-      <SobrePage />
+      <AboutMe />
+      <School />
+      <AboutSite />
     </main>
   );
 };
