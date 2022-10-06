@@ -36,6 +36,12 @@ export const Wrapper = styled.section`
       }
     }
 
+    @media (min-width: 2500px) {
+      & > g {
+        scale: 0.9;
+      }
+    }
+
 
   }
 
