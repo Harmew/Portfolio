@@ -32,9 +32,11 @@ export const Wrapper = styled.section`
 
     @media (min-width: 1980px) {
       & > g {
-        scale: 0.1;
+        scale: 0.5;
       }
     }
+
+   
   }
 
   & > svg[class*="1"],
