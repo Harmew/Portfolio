@@ -12,12 +12,8 @@ export const Wrapper = styled.section`
   align-items: center;
 
   & > :nth-child(1) {
-    height: calc(100vh + 3px);
-    width: calc(100vw + 60px);
-
-    position: absolute;
-    top: 0;
-    left: -70px;
+    height: 100%;
+    width: 100%;
 
     z-index: 0;
 

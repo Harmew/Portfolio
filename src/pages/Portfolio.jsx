@@ -14,7 +14,7 @@ const keywords =
 
 export const Portfolio = () => {
   return (
-    <main>
+    <main style={{ "overflow-x": "hidden" }}>
       <Head title={title} description={description} keywords={keywords} />
       <Home />
       <Projects />
