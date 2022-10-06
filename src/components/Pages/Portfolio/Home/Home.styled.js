@@ -30,13 +30,13 @@ export const Wrapper = styled.section`
       scale: 0.3;
     }
 
-    @media (min-width: 1980px) {
+    @media (min-width: 1500px) {
       & > g {
         scale: 0.5;
       }
     }
 
-   
+
   }
 
   & > svg[class*="1"],
