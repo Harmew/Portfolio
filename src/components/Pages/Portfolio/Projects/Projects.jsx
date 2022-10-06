@@ -12,12 +12,14 @@ import LinkComponent from "../../../Helper/Link/Link";
 
 // Hook
 import useFetch from "../../../../hooks/useFetch";
+import useAnimatedObservable from "../../../../hooks/useAnimatedObservable";
 
 // Global Variaveis
 const API = "https://api.github.com/users/Harmew/repos";
 
 export const Projects = () => {
   const { data, error, loading, request } = useFetch();
+  const { myRef, unObserveOnEnter } = useAnimatedObservable();
 
   React.useEffect(() => {
     const url = API;
@@ -25,7 +27,7 @@ export const Projects = () => {
   }, [request]);
 
   return (
-    <Wrapper>
+    <Wrapper ref={myRef} className={unObserveOnEnter ? "animated" : ""}>
       <Container>
         <TitleComponent text="Portfólio" size={2} hover />
         {data && <Items data={data} />}

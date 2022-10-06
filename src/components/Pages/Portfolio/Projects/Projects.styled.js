@@ -6,6 +6,21 @@ export const Wrapper = styled.section`
   width: 100%;
 
   padding-bottom: 3em;
+
+  &.animated {
+    animation: AnimaDown 1s ease;
+  }
+
+  @keyframes AnimaDown {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 `;
 
 export const Container = styled.div`

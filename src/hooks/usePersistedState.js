@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
 export const usePersistedState = (key, initialState) => {
   // Get LocalStorage Value
-  const [state, setState] = useState(() => {
+  const [state, setState] = React.useState(() => {
     const storageValue = localStorage.getItem(key);
 
     // Case LocalStorage Value exists return value else return initialState = light
@@ -14,7 +14,7 @@ export const usePersistedState = (key, initialState) => {
   });
 
   // Set LocalStorage Value
-  useEffect(() => {
+  React.useEffect(() => {
     localStorage.setItem(key, JSON.stringify(state));
   }, [key, state]);
 

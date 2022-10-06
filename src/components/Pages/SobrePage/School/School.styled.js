@@ -60,6 +60,21 @@ export const TextContainer = styled.div`
   @media (max-width: 280px) {
     width: 100%;
   }
+
+  &.animated {
+    animation: AnimaDown 2s ease;
+  }
+
+  @keyframes AnimaDown {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 `;
 
 export const SvgContainer = styled.div`
@@ -103,7 +118,37 @@ export const ImagesContainer = styled.div`
 
   align-items: center;
 
+  &.animatedImage {
+    animation: AnimaLeftImage 2s ease;
+  }
+
   @media (max-width: 840px) {
     flex-direction: column;
+
+    &.animatedImage {
+      animation: AnimaDown 2s ease;
+    }
+  }
+
+  @keyframes AnimaLeftImage {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes AnimaDown {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 `;

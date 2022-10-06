@@ -12,15 +12,26 @@ import {
 // Components
 import TitleComponent from "../../../Helper/TitleComponent/TitleComponent";
 
+// Hook
+import useAnimatedObservable from "../../../../hooks/useAnimatedObservable";
+
 // Img - SVGs
 import Picture from "../../../../assets/images/profile.jpg";
 import { ReactComponent as Linkedin } from "../../../../assets/svgs/Linkedin.svg";
 import { ReactComponent as Github } from "../../../../assets/svgs/Github.svg";
 
 const School = () => {
+  const { myRef: TextRef, unObserveOnEnter: TextObservable } =
+    useAnimatedObservable();
+  const { myRef: ImageRef, unObserveOnEnter: ImageObservable } =
+    useAnimatedObservable();
+
   return (
     <Wrapper>
-      <ImagesContainer>
+      <ImagesContainer
+        ref={ImageRef}
+        className={ImageObservable ? "animatedImage" : ""}
+      >
         <Image src={Picture} alt="Foto de Perfil" />
         <SvgContainer>
           <a
@@ -41,7 +52,7 @@ const School = () => {
           </a>
         </SvgContainer>
       </ImagesContainer>
-      <TextContainer>
+      <TextContainer ref={TextRef} className={TextObservable ? "animated" : ""}>
         <TitleComponent text="Escolaridade" hover size={2} />
         <p>
           Estou cursando Ciência da Computação desde 2021, e optei pelo curso,

@@ -58,4 +58,19 @@ export const TextContainer = styled.div`
   @media (max-width: 280px) {
     width: 100%;
   }
+
+  &.animated {
+    animation: AnimaDown 1s ease;
+  }
+
+  @keyframes AnimaDown {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 `;

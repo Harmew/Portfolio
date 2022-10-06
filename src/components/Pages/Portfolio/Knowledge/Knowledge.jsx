@@ -11,6 +11,9 @@ import {
 // Components
 import TitleComponent from "../../../Helper/TitleComponent/TitleComponent";
 
+// Hook
+import useAnimatedObservable from "../../../../hooks/useAnimatedObservable";
+
 // SVG
 import { ReactComponent as BackgroundAside } from "../../../../assets/svgs/Background-Aside.svg";
 import { ReactComponent as NextJS } from "../../../../assets/svgs/Next.svg";
@@ -60,21 +63,29 @@ const TEXTS_ICONS = [
 
 const Knowledge = () => {
   const [text, setText] = useState(TEXTS_ICONS[0]);
+  const [animation, setAnimation] = useState(false);
+  const { myRef, unObserveOnEnter } = useAnimatedObservable();
 
   const handleMouseEnter = (e) => {
     const { id } = e.target;
 
     if (id) {
+      if (text === TEXTS_ICONS[id]) return;
+
       setText(TEXTS_ICONS[id]);
+      if (!animation) {
+        setAnimation(true);
+        setTimeout(() => setAnimation(false), 500);
+      }
     }
   };
 
   return (
-    <Wrapper>
+    <Wrapper ref={myRef} className={unObserveOnEnter ? "animated" : ""}>
       <TitleComponent text="Conhecimentos" size={2} hover />
       <BackgroundAside />
       <Container>
-        <TextContainer>
+        <TextContainer className={animation ? `animated` : false}>
           <h3>{text.title}</h3>
           <p>{text.description}</p>
         </TextContainer>

@@ -16,7 +16,11 @@ const Items = ({ data }) => {
           <h3>{item.name}</h3>
           <p>{item.description}</p>
           <div>
-            <LinkComponent href={item.html_url} target="_blank" text="Ir para..." />
+            <LinkComponent
+              href={item.html_url}
+              target="_blank"
+              text="Ir para..."
+            />
           </div>
         </li>
       ))}

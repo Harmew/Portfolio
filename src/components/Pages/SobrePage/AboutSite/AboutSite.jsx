@@ -9,11 +9,16 @@ import TitleComponent from "../../../Helper/TitleComponent/TitleComponent";
 // SVGs
 import { ReactComponent as BackgroundImage } from "../../../../assets/svgs/Background-Home.svg";
 
+// Hook
+import useAnimatedObservable from "../../../../hooks/useAnimatedObservable";
+
 const AboutSite = () => {
+  const { myRef, unObserveOnEnter } = useAnimatedObservable();
+
   return (
     <Wrapper>
       <BackgroundImage />
-      <TextContainer>
+      <TextContainer ref={myRef} className={unObserveOnEnter ? "animated" : ""}>
         <TitleComponent text="Sobre o Site" hover size={2} />
         <p>
           Na construção do site, tentei puxar um lado um pouco mais criativo e
