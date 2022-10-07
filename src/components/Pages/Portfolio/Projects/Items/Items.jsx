@@ -17,7 +17,7 @@ const Items = ({ data }) => {
           <p>{item.description}</p>
           <div>
             <LinkComponent
-              href={item.html_url}
+              href={item.homepage}
               target="_blank"
               text="Ir para..."
             />
