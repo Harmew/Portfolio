@@ -52,7 +52,7 @@ export const TextContainer = styled.div`
   }
 
   @media (max-width: 840px) {
-    margin: 0 auto;
+    margin: 2em auto 0 auto;
 
     text-align: center;
   }
